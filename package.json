@@ -1,6 +1,6 @@
 {
   "name": "afternoon-reporting",
-  "version": "1.0.0",
+  "version": "1.2.0",
   "description": "Automated afternoon reporting to Google Spreadsheet",
   "main": "index.js",
   "type": "module",

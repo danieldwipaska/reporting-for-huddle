@@ -23,7 +23,7 @@ export class ReportService {
     prs.new.forEach(pr => {
       tasks.push({
         description: `[${pr.repo}] ${pr.title}`,
-        status: 'Need Review',
+        status: pr.status, // Use actual status from GitHub service
         url: pr.url,
         notes: `PR #${pr.number}`,
       });
@@ -33,7 +33,7 @@ export class ReportService {
     prs.updated.forEach(pr => {
       tasks.push({
         description: `[${pr.repo}] ${pr.title}`,
-        status: 'Updated',
+        status: pr.status, // Use actual status from GitHub service
         url: pr.url,
         notes: `PR #${pr.number} - Updated`,
       });

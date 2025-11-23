@@ -4,7 +4,9 @@ Automated tool untuk membuat laporan afternoon reporting ke Google Spreadsheet. 
 
 ## 🚀 Features
 
-- ✅ **Auto-detect GitHub PRs**: Otomatis mendeteksi PR baru yang dibuat hari ini (status: "Need Review")
+- ✅ **Auto-detect GitHub PRs**: Otomatis mendeteksi PR baru yang dibuat hari ini
+- ✅ **Smart PR Status**: Otomatis mendeteksi status PR (Need Review, Need Changes, Done/Merged, Closed)
+- 💬 **Comment Detection**: Deteksi PR yang perlu changes berdasarkan comment/review dari reviewer
 - 🔄 **Track PR Updates**: Mendeteksi PR yang di-update hari ini
 - 🔨 **WIP Detection**: Mendeteksi work in progress dari branch lokal
 - ✍️ **Manual Tasks**: Menambahkan task manual untuk pekerjaan server atau task lain
@@ -153,9 +155,17 @@ Report akan ditulis ke Google Spreadsheet dengan format:
 
 ## 🎯 Status Types
 
-- **Need Review**: PR baru yang dibuat hari ini
-- **Updated**: PR yang di-update hari ini
+### GitHub PR Status
+- **Need Review**: PR baru yang dibuat hari ini dan masih open (belum ada comment dari orang lain)
+- **Need Changes**: PR yang ada comment/review dari orang lain dan belum di-respond atau di-update
+- **Done**: PR yang sudah di-merge (merged)
+- **Closed**: PR yang di-close tanpa merge
+- **Updated**: PR yang di-update hari ini (bukan hari ini dibuat)
+
+### Local Git Status
 - **WIP**: Work in progress (uncommitted changes atau unpushed commits)
+
+### Manual Task Status
 - **Completed**: Task manual yang sudah selesai
 - **In Progress**: Task manual yang sedang dikerjakan
 - **Blocked**: Task manual yang terblokir
